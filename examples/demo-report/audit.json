@@ -1,0 +1,209 @@
+{
+  "schema_version": "1.0",
+  "tool_version": "0.1.0",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "Pillow": "12.3.0"
+  },
+  "manifest_sha256": "15ef80396cc0564cead518c7c457f7b7e7b1ef0deca1605d54cc1c666d05f571",
+  "policy": {
+    "relative_calibration_tolerance": 0.01,
+    "max_pixels": 25000000,
+    "scope": "single-plane grayscale PNG/TIFF, combined ADS masks",
+    "no_findings_means": "No implemented check found a problem, not scientific validation."
+  },
+  "summary": {
+    "no_findings": 1,
+    "review": 1,
+    "blocked": 4
+  },
+  "results": [
+    {
+      "image": "consistent/image.tif",
+      "mask": "consistent/mask.png",
+      "width": 128,
+      "height": 96,
+      "pixel_size_um": 0.1,
+      "field_width_um": 12.8,
+      "field_height_um": 9.600000000000001,
+      "calibrations": {
+        "ads_sidecar": [
+          0.1,
+          0.1
+        ],
+        "ome": [
+          0.1,
+          0.1
+        ]
+      },
+      "hashes": {
+        "ads_sidecar": "a6311009c6c322ca8ac2e620cff5204f0c3af23115d403293a0cb5be36796688",
+        "image": "531f8cc0e7fa577f8d32b6fc172c7fccbf3bb40410d2c97fff09871c95e333c0",
+        "mask": "6842f3d8b9bfe0d33fb4ddeeae8004aa20547af529065627c973adaab2a75fba"
+      },
+      "findings": [],
+      "status": "no_findings"
+    },
+    {
+      "image": "scale_conflict/image.tif",
+      "mask": "scale_conflict/mask.png",
+      "width": 128,
+      "height": 96,
+      "pixel_size_um": null,
+      "field_width_um": null,
+      "field_height_um": null,
+      "calibrations": {
+        "manifest": [
+          0.2,
+          0.2
+        ],
+        "ads_sidecar": [
+          0.1,
+          0.1
+        ],
+        "ome": [
+          0.1,
+          0.1
+        ]
+      },
+      "hashes": {
+        "ads_sidecar": "a6311009c6c322ca8ac2e620cff5204f0c3af23115d403293a0cb5be36796688",
+        "image": "531f8cc0e7fa577f8d32b6fc172c7fccbf3bb40410d2c97fff09871c95e333c0",
+        "mask": "6842f3d8b9bfe0d33fb4ddeeae8004aa20547af529065627c973adaab2a75fba"
+      },
+      "findings": [
+        {
+          "code": "CALIBRATION_CONFLICT",
+          "severity": "error",
+          "message": "manifest=0.2 x 0.2 um; ads_sidecar=0.1 x 0.1 um; ome=0.1 x 0.1 um",
+          "action": "Reconcile these sources against acquisition records; no automatic override is applied."
+        }
+      ],
+      "status": "blocked"
+    },
+    {
+      "image": "wrong_grid/image.tif",
+      "mask": "wrong_grid/mask.png",
+      "width": 128,
+      "height": 96,
+      "pixel_size_um": 0.1,
+      "field_width_um": 12.8,
+      "field_height_um": 9.600000000000001,
+      "calibrations": {
+        "ads_sidecar": [
+          0.1,
+          0.1
+        ],
+        "ome": [
+          0.1,
+          0.1
+        ]
+      },
+      "hashes": {
+        "ads_sidecar": "a6311009c6c322ca8ac2e620cff5204f0c3af23115d403293a0cb5be36796688",
+        "image": "531f8cc0e7fa577f8d32b6fc172c7fccbf3bb40410d2c97fff09871c95e333c0",
+        "mask": "408b5afa5ea269520cf5796cb0efac111b1af1cfe2b05e1cd95c66bd593910b1"
+      },
+      "findings": [
+        {
+          "code": "MASK_SHAPE_MISMATCH",
+          "severity": "error",
+          "message": "Image shape (96, 128); mask shape (80, 128).",
+          "action": "Use the mask generated on the same pixel grid; do not resize it blindly."
+        }
+      ],
+      "status": "blocked"
+    },
+    {
+      "image": "missing_scale/image.tif",
+      "mask": "missing_scale/mask.png",
+      "width": 128,
+      "height": 96,
+      "pixel_size_um": null,
+      "field_width_um": null,
+      "field_height_um": null,
+      "calibrations": {},
+      "hashes": {
+        "image": "173bec2ad8171f41ae94141db16d0ad0d4e7099c406b02fd906e43932449ec42",
+        "mask": "6842f3d8b9bfe0d33fb4ddeeae8004aa20547af529065627c973adaab2a75fba"
+      },
+      "findings": [
+        {
+          "code": "CALIBRATION_MISSING",
+          "severity": "error",
+          "message": "No physical pixel size was provided.",
+          "action": "Add pixel_size_um to the manifest, valid OME metadata, or an ADS sidecar."
+        }
+      ],
+      "status": "blocked"
+    },
+    {
+      "image": "wrong_labels/image.tif",
+      "mask": "wrong_labels/mask.png",
+      "width": 128,
+      "height": 96,
+      "pixel_size_um": 0.1,
+      "field_width_um": 12.8,
+      "field_height_um": 9.600000000000001,
+      "calibrations": {
+        "ads_sidecar": [
+          0.1,
+          0.1
+        ],
+        "ome": [
+          0.1,
+          0.1
+        ]
+      },
+      "hashes": {
+        "ads_sidecar": "a6311009c6c322ca8ac2e620cff5204f0c3af23115d403293a0cb5be36796688",
+        "image": "531f8cc0e7fa577f8d32b6fc172c7fccbf3bb40410d2c97fff09871c95e333c0",
+        "mask": "0015c306aa9a6e8d23468b7ee445f2d0609e7ac33141dd6fffc000a7106a1945"
+      },
+      "findings": [
+        {
+          "code": "MASK_LABELS_INVALID",
+          "severity": "error",
+          "message": "Combined mask contains values outside 0, 127 and 255.",
+          "action": "Export an ADS combined mask (background=0, myelin=127, axon=255)."
+        }
+      ],
+      "status": "blocked"
+    },
+    {
+      "image": "empty_mask/image.tif",
+      "mask": "empty_mask/mask.png",
+      "width": 128,
+      "height": 96,
+      "pixel_size_um": 0.1,
+      "field_width_um": 12.8,
+      "field_height_um": 9.600000000000001,
+      "calibrations": {
+        "ads_sidecar": [
+          0.1,
+          0.1
+        ],
+        "ome": [
+          0.1,
+          0.1
+        ]
+      },
+      "hashes": {
+        "ads_sidecar": "a6311009c6c322ca8ac2e620cff5204f0c3af23115d403293a0cb5be36796688",
+        "image": "531f8cc0e7fa577f8d32b6fc172c7fccbf3bb40410d2c97fff09871c95e333c0",
+        "mask": "ebde2fc6a9cbe2cd2384f0578d91e984e454935e0f38d1c342209e6fffaaf3b3"
+      },
+      "findings": [
+        {
+          "code": "MASK_EMPTY",
+          "severity": "warning",
+          "message": "Combined mask contains only background.",
+          "action": "Review whether this is expected for the sample."
+        }
+      ],
+      "status": "review"
+    }
+  ]
+}

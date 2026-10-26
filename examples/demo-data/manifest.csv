@@ -1,0 +1,7 @@
+image,mask,pixel_size_um
+consistent/image.tif,consistent/mask.png,
+scale_conflict/image.tif,scale_conflict/mask.png,0.2
+wrong_grid/image.tif,wrong_grid/mask.png,
+missing_scale/image.tif,missing_scale/mask.png,
+wrong_labels/image.tif,wrong_labels/mask.png,
+empty_mask/image.tif,empty_mask/mask.png,

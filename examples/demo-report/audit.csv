@@ -1,0 +1,7 @@
+image,mask,status,width,height,pixel_size_um,field_width_um,field_height_um,codes
+consistent/image.tif,consistent/mask.png,no_findings,128,96,0.1,12.8,9.600000000000001,
+scale_conflict/image.tif,scale_conflict/mask.png,blocked,128,96,,,,CALIBRATION_CONFLICT
+wrong_grid/image.tif,wrong_grid/mask.png,blocked,128,96,0.1,12.8,9.600000000000001,MASK_SHAPE_MISMATCH
+missing_scale/image.tif,missing_scale/mask.png,blocked,128,96,,,,CALIBRATION_MISSING
+wrong_labels/image.tif,wrong_labels/mask.png,blocked,128,96,0.1,12.8,9.600000000000001,MASK_LABELS_INVALID
+empty_mask/image.tif,empty_mask/mask.png,review,128,96,0.1,12.8,9.600000000000001,MASK_EMPTY
