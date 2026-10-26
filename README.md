@@ -1,5 +1,7 @@
 # Morphometry Preflight
 
+[![Tests](https://github.com/AymenBenalia/morphometry-preflight/actions/workflows/tests.yml/badge.svg)](https://github.com/AymenBenalia/morphometry-preflight/actions/workflows/tests.yml)
+
 Audit physical pixel calibration and combined axon/myelin masks before extracting measurements from 2D microscopy images.
 
 This independent prototype focuses on a small, practical failure mode: an image, its mask and its calibration can each look reasonable while disagreeing with one another. It collects the evidence, reports conflicts, and leaves the inputs unchanged.
@@ -105,7 +107,7 @@ for result in audit_manifest(Path("dataset/manifest.csv")):
 python -m unittest discover -s tests -v
 ```
 
-Tests cover planted scientific-input failures, unit conversion, malformed metadata, path containment, unchanged sources, offline HTML escaping, spreadsheet formula escaping, CLI exit codes and deterministic reports. A GitHub Actions workflow is included for Python 3.11, 3.12 and 3.13. The presence of that workflow does not mean it has run on GitHub.
+Tests cover planted scientific-input failures, unit conversion, malformed metadata, path containment, unchanged sources, offline HTML escaping, spreadsheet formula escaping, CLI exit codes and deterministic reports. GitHub Actions runs the suite on Python 3.11, 3.12 and 3.13. See the badge above for the latest result.
 
 ## Limits and useful next steps
 
